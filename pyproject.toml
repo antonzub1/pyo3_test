@@ -1,0 +1,31 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "stat_functions"
+version = "0.1.0"
+description = "Fast mean and median calculation using Rust (PyO3 and maturin)"
+authors = [
+    {name = "Anton Zub"}
+]
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+readme = "README.md"
+# dependencies = []  # Add Python dependencies here if needed
+
+[project.urls]
+Homepage = "https://github.com/yourname/float_stats"
+
+[tool.maturin]
+bindings = "pyo3"
+
+[dependency-groups]
+dev = [
+    "pytest>=7.4.4",
+]
