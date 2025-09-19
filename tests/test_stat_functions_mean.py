@@ -1,4 +1,5 @@
 import math
+import statistics
 
 import pytest
 
@@ -6,7 +7,7 @@ from stat_functions import mean
 
 def test_mean_ok():
     values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    assert(mean(values)) == 5.5
+    assert mean(values) == statistics.mean(values)
 
 
 def test_mean_empty():
@@ -21,9 +22,9 @@ def test_mean_nan():
 
 def test_mean_inf():
     values = [1, 2, 3, 4, float("+inf"), 6, 7, 8, 9, 10];
-    assert mean(values) == float("+inf")
+    assert mean(values) == statistics.mean(values)
 
 
 def test_mean_neg_inf():
     values = [1, 2, 3, 4, float("-inf"), 6, 7, 8, 9, 10];
-    assert mean(values) == float("-inf")
+    assert mean(values) == statistics.mean(values)

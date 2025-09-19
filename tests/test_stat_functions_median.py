@@ -1,4 +1,5 @@
 import math
+import statistics
 
 import pytest
 
@@ -22,9 +23,9 @@ def test_median_nan():
 
 def test_median_inf():
     values = [1, 2, 3, 4, float("+inf"), 6, 7, 8, 9, 10];
-    assert median(values) == 6.5
+    assert median(values) == statistics.median(values)
 
 def test_median_neg_inf():
     values = [1, 2, 3, 4, float("-inf"), 6, 7, 8, 9, 10];
-    assert median(values) == 5.0
+    assert median(values) == statistics.median(values)
 
